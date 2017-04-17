@@ -8,9 +8,19 @@ var drummer1 = {
     "picture_url": "img/Drummers/glennkotcheportrait2.jpg",
     "about": "Glenn Kotche born December 31 1970 in Roselle, Illinois, United States is an American drummer and composer, best known for his involvement in the band Wilco. He was named the 40th greatest drummer of all time by Gigwise in 2008. Prior to working with Wilco, Kotche released a four-track album entitled Introducing. In 2003, he released a second solo album titled Next, featuring solo drum improvisations using homemade percussion installations. A third solo album was released in March 2006 on Nonesuch Records, entitled Mobile. This album featured a broad range of compositions for percussion.",
     "selling_points": [
-        "Reccomended Listening:",
-        "Taste This"
+        "Glenn Kotche Plays 'Art of Almost'",
+        "'Wild Sound' An Arrangement by Glenn Kotche",
+        "'Monkey Chant' Composed and Performed by Glenn Kotche",
+        "Wilco plays Spiders(Kidsmoke)",
+        "Wilco's 'I am trying to break your heart by Glenn Kotche'"
 
+    ],
+    "linkURL": [
+      "https://www.youtube.com/watch?v=IkLCg6zNlz8",
+      "https://www.youtube.com/watch?v=D0S2aVUUGNs",
+      "https://www.youtube.com/watch?v=VwekSyWxcgg",
+      "https://youtu.be/OTdkHV9YsIk?t=1h44m20s",
+      "https://www.youtube.com/watch?v=y3paspn2oYw"
     ]
 
 };
@@ -24,6 +34,13 @@ var drummer2 = {
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    ],
+    "linkURL": [
+      "https://www.youtube.com/watch?v=IkLCg6zNlz8",
+      "https://www.youtube.com/watch?v=D0S2aVUUGNs",
+      "https://www.youtube.com/watch?v=VwekSyWxcgg",
+      "https://youtu.be/OTdkHV9YsIk?t=1h44m20s",
+      "https://www.youtube.com/watch?v=y3paspn2oYw"
     ]
 };
 
@@ -36,6 +53,13 @@ var drummer3 = {
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    ],
+    "linkURL": [
+      "https://www.youtube.com/watch?v=IkLCg6zNlz8",
+      "https://www.youtube.com/watch?v=D0S2aVUUGNs",
+      "https://www.youtube.com/watch?v=VwekSyWxcgg",
+      "https://youtu.be/OTdkHV9YsIk?t=1h44m20s",
+      "https://www.youtube.com/watch?v=y3paspn2oYw"
     ]
 };
 
@@ -48,6 +72,13 @@ var drummer4 = {
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         "Lorem ip`sum dolor sit amet, consectetur adipisicing elit.",
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    ],
+    "linkURL": [
+      "https://www.youtube.com/watch?v=IkLCg6zNlz8",
+      "https://www.youtube.com/watch?v=D0S2aVUUGNs",
+      "https://www.youtube.com/watch?v=VwekSyWxcgg",
+      "https://youtu.be/OTdkHV9YsIk?t=1h44m20s",
+      "https://www.youtube.com/watch?v=y3paspn2oYw"
     ]
 };
 
@@ -60,16 +91,30 @@ var drummer5 = {
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         "Lorem ip`sum dolor sit amet, consectetur adipisicing elit.",
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    ],
+    "linkURL": [
+      "https://www.youtube.com/watch?v=IkLCg6zNlz8",
+      "https://www.youtube.com/watch?v=D0S2aVUUGNs",
+      "https://www.youtube.com/watch?v=VwekSyWxcgg",
+      "https://youtu.be/OTdkHV9YsIk?t=1h44m20s",
+      "https://www.youtube.com/watch?v=y3paspn2oYw"
     ]
+
 };
 
 var drummers = [drummer1, drummer2, drummer3, drummer4, drummer5];
 
 
 var generateItem = function generateItem( musician ){
+
+  var sellingPointsListItems = ''; // placeholder for all selling point list items
+  musician.selling_points.forEach( function(sellingPoint, i){
+    sellingPointsListItems += "<li><a href='" + musician.linkURL[i] + "'>" + sellingPoint + "</a></li>";
+  } );
+
     $( "#drummer" + musician.id + " h2" ).text( musician.name );
     $( "#drummer" + musician.id + " img" ).attr( "src", musician.picture_url );
-    $( "#drummer" + musician.id + " a" ).text( musician.selling_points );
+    $( "#drummer" + musician.id + " ul" ).append(sellingPointsListItems);
     $( "#drummer" + musician.id + " p" ).text( musician.about );
     $( "#drummer" + musician.id + " span" ).text( musician.id );
 };
