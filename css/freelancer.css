@@ -68,8 +68,8 @@ hr.star-primary:after {
 }
 header {
   text-align: center;
-  background: #ecd8c6;
-  color: white;
+  background-image: url("../img/new_year_background.png");
+  color: #333;
 }
 header .container {
   padding-top: 100px;
@@ -181,7 +181,7 @@ section h2 {
   font-size: 3em;
 }
 section.success {
-  background: #604020;
+  background-image: url("../img/ep_naturalblack.png");
   color: white;
 }
 @media (max-width: 767px) {
